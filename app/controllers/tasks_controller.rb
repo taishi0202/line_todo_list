@@ -18,27 +18,24 @@ class TasksController < ApplicationController
     binding.pry
     @task = Task.new(task_params)
 
-    if @task.save
-      render :show, status: :created, location: @task
-    else
-      render json: @task.errors, status: :unprocessable_entity
-    end
+    @task.save!
+
+    render :show
   end
 
   # PATCH/PUT /tasks/1
   # PATCH/PUT /tasks/1.json
   def update
-    if @task.update(task_params)
-      render :show, status: :ok, location: @task
-    else
-      render json: @task.errors, status: :unprocessable_entity
-    end
+    @task.update!(task_params)
+    render :show
   end
 
   # DELETE /tasks/1
   # DELETE /tasks/1.json
   def destroy
-    @task.destroy
+    @task.destroy!
+
+    render :show
   end
 
   private
