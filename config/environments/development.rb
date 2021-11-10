@@ -61,5 +61,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # ngrok を立ち上げた際に発行される URL のドメイン部分（https:// 以降)を以下のように記載する
-  config.hosts = ["5c8c094bb344.ngrok.io", "localhost"]
+  config.hosts = ["edaf-240f-10a-4221-1-687c-a57a-b503-e143.ngrok.io", "localhost"]
 end
